@@ -7,7 +7,7 @@ bot = telebot.TeleBot(token)
 
 @bot.message_handler(commands=["start"])
 def send_welcome(message):
-    bot.send_message(message.chat.id, "Assalomu alaykum")
+    bot.reply_to(message, text="Mana bu tugmaga qarang")
 
 
-bot.polling()
+bot.polling(True)
