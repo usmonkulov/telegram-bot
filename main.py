@@ -7,7 +7,13 @@ bot = telebot.TeleBot(token)
 
 @bot.message_handler(commands=["id"])
 def id(message):
-    bot.send_message(message.chat.id, text="Id: " + str(message.chat.id) + "\n username: @" + str(message.from_user.username) + "\n your text: " + str(message.text) )
+    cht = message.chat.id
+    frt = message.chat.first_name
+    usr = message.from_user.username
+    typ = message.chat.type
+    dat = message.date
+
+    bot.send_message(message.chat.id, text="ID : {}\nName : {}\nUser : @{}\nType : {}\nDate Msg : {}\nChannel : [Bobur Usmonkulov | Dev](t.me/bobur_usmonkulov_blog)".format(cht, frt, usr, typ, dat))
 
 
 bot.polling(True)
